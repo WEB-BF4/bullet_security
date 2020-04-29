@@ -1,7 +1,7 @@
 import styles from './index.less';
 import './reset.css';
 import {NavLink} from 'umi';
-import { Mg1000 } from './style';
+import { Mg1000 } from './style';``
 
 function BasicLayout(props) {
   return (
