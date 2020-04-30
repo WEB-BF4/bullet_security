@@ -2,13 +2,17 @@ import styles from './index.less';
 import './reset.css';
 import {NavLink} from 'umi';
 import { Mg1000 } from './style';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.webp';
 function BasicLayout(props) {
   return (
     <div className={styles.normal}>
       <nav>
           <Mg1000>
               <img src={logo} alt="图片"/>
+              <h3 className={styles.logo_text}>
+                Bullet <span>Security</span>
+                <p>布里特安防公司</p>
+              </h3>
               <ul>
                 <li><NavLink exact to='/'>首页</NavLink></li>
                 <li><NavLink to='/contact'>联系我们</NavLink></li>

@@ -2,13 +2,32 @@
 
 // 头部导航条
 nav{
-  height: 120px;
+  @navhight:110px;
+  height: @navhight;
   background-color: #ececec;
-
+  img{
+    position: absolute;
+    top:50%;
+    transform: translate(0,-50%);
+    width: 180px;
+  }
+  .logo_text{
+    position: relative;
+    float: left;
+    margin: 40px 0px 0px 170px;
+    font-size: 24px;
+    color:#891519;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    p{
+      margin: -10px 0px 0px 0px ;
+      font-size: 14px;
+      color:#777;
+    }
+  }
   ul {
     float: right;
     width: 300px;
-    height: 120px;
+    height: @navhight;
     li{
       float: left;
       list-style-type: none;
