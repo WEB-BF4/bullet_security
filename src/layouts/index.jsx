@@ -2,13 +2,16 @@ import styles from './index.less';
 import './reset.css';
 import {NavLink} from 'umi';
 import { Mg1000 } from '../globalstyle';
-import logo from '../assets/logo.webp';
+import logo from '../assets/img/logo.webp';
 // 引入字体
 import { GlobalFontStyle } from '../assets/font/font';
+//引入字体图标
+import { GlobalIconStyle } from '../assets/fonticon/iconfont'
 function BasicLayout(props) {
   return (
     <div className={styles.normal}>
       <GlobalFontStyle/>
+      <GlobalIconStyle/>
       <nav>
           <Mg1000>
               <img src={logo} alt="图片"/>
@@ -60,8 +63,7 @@ function BasicLayout(props) {
             <div className={styles.infobox}>
                 <strong>优秀的售后</strong>
                 <p>国际模拟入侵比赛规划者</p>
-                <p>国际模拟入侵比赛规划者</p>
-                asdfasdasdfasd
+                <p>战术防御比赛规划者</p>
             </div>
 
           </Mg1000>

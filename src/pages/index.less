@@ -1,24 +1,77 @@
 // 导航条banner
+.mgcenter(){
+  margin: 0 auto;
+}
+@font_bth:"优设标题黑";
 .banner{
   @banheight:500px;
   height: @banheight;
   background:#20232A;
   background: center/cover url(../assets/img/banner3.png);
+  background-attachment: fixed;
   color: #fff;
   h1{
     margin-top: 120px;
     color: #fff;
     font-size: 60px;
-    font-family: "优设标题黑";
+    font-family: @font_bth;
+    text-shadow: 5px 5px 10px #000;
   }
   h3{
     width: 700px;
     color: #fff;
-    font-size: 20px;
-    font-family: "优设标题黑";
+    font-size: 30px;
+    font-family: @font_bth;
   }
 }
 .intro{
-  height: 700px;
+  @mg1000:1000px;
+  box-sizing: border-box;
+  padding: 100px 0px;
   background-color: #EEF0E4;
+  text-align: center;
+  h1{
+    .mgcenter();
+    width: 500px;
+    font-family:@font_bth ;
+    font-size: 40px;
+    color: #fff;
+    line-height: 1.2em;
+    text-shadow: 2px 2px 5px #000;
+  }
+  p{
+    margin: 20px 0px 40px 0px ;
+  }
+  .introbox{
+      float: left;
+      box-sizing: border-box;
+      width: (@mg1000/3)*0.8;
+      margin:0px 0px 20px 60px;
+      padding: 30px;
+      //进行一下拟态阴影设计
+      box-shadow: 10px 10px 20px rgba(0,0,0,0.1),
+      -10px -10px 20px rgba(255, 255, 255, 1);
+      border-radius: 20px;
+      transition: .2s ease-in-out;
+      &:hover{
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2),
+        0px 0px 0px rgba(255, 255, 255, 0.8),
+        inset 18px 18px 30px rgba(0, 0, 0, 0.1),
+        inset -18px -18px 30px rgba(255, 255, 255, 1);
+      }
+      //控制一下图标
+      i{
+        font-size: 42px;
+        color: red;
+      } 
+      h3{
+        font-family: @font_bth;
+        font-size: 40px;
+      }
+      p{
+        color: #777;
+        text-indent: 2em;
+        text-align: left;
+      }
+  }
 }
