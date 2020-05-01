@@ -1,11 +1,14 @@
 import styles from './index.less';
 import './reset.css';
 import {NavLink} from 'umi';
-import { Mg1000 } from './style';
+import { Mg1000 } from '../globalstyle';
 import logo from '../assets/logo.webp';
+// 引入字体
+import { GlobalFontStyle } from '../assets/font/font';
 function BasicLayout(props) {
   return (
     <div className={styles.normal}>
+      <GlobalFontStyle/>
       <nav>
           <Mg1000>
               <img src={logo} alt="图片"/>
