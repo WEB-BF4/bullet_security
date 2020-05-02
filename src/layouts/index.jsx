@@ -29,7 +29,9 @@ function BasicLayout(props) {
               </ul>
           </Mg1000>
       </nav>
-      {props.children}
+      <div style={{minHeight:"700px"}}>
+        {props.children}
+      </div>
       <footer>
         <div className={styles._contact}>
           <Mg1000 className={styles.flex}>

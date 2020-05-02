@@ -1,9 +1,13 @@
+body{
+  background-color:rgba(0,0,0,.7);
+}
 // 导航条banner
 .mgcenter(){
   margin: 0 auto;
 }
 @font_bth:"优设标题黑";
 .banner{
+  overflow: hidden;
   @banheight:500px;
   height: @banheight;
   background:#20232A;
@@ -24,7 +28,9 @@
     font-family: @font_bth;
   }
 }
+// 红色介绍框
 .redintro{
+  overflow: hidden;
   @pbt:20px;
   box-sizing:border-box;
   padding: @pbt 0px;
@@ -54,6 +60,11 @@
     }
   }
   
+}
+//白色介绍框
+.whiteintro{
+  height: 400px;
+  background-color: #fff;
 }
 // 介绍框
 .intro{
