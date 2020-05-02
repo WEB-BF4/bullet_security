@@ -10,7 +10,6 @@ export default function() {
           <Mg1000 className={`${animate.animated} ${animate.fadeInRight}`}> 
                 <h1>布里特安防公司</h1>
                 <h3>您的安全 就是我们的未来</h3>
-                <h3>他的遗产他的智慧 他的 回声</h3>
           </Mg1000>
       </div>
       {/* 红色的介绍部分 */}
@@ -18,26 +17,20 @@ export default function() {
           <Mg1000>
               <div className={styles.infobox}>
                 <strong>医疗防护</strong>
-                <p>极大改善致命疾病和损伤治疗效果的突破性应用纳米生物学领域，可以拯救更多人生命的机会。
-                  作为守望先锋医学研究部门的负责人，致力于更好地在前线治疗受到致命伤的病员
+                <p>极大改善致命疾病和损伤治疗效果的突破性应用纳米生物学领域，致力于更好地在前线治疗受到致命伤的病员
                   <Link to='/contact'>了解更多</Link>
                   </p>
               </div>
               <div className={styles.infobox}>
                 <strong>防护设备</strong>
-                <p>费斯卡集团开始建造一系列全新的城市,通过尖端的高强度光束科技，
-                  让光子建筑师们可以在眨眼间建成城市的街道、基础设施和生活区域
-                  ，用来接纳那些无家可归的人民。
+                <p>建造一系列全新的城市,通过尖端的高强度光束科技，基础设施和生活区域用来接纳那些无家可归的人民。
                   <Link to='/contact'>了解更多</Link>
                   </p>
                   
               </div>
               <div className={styles.infobox}>
                 <strong>警卫</strong>
-                <p>她需要学习许多关于这个世界和她的职责的知识。
-                但只要在积极乐观的影响以
-                及她本身越来越强的荣誉和职责感的引导下，
-                奥丽莎将不惜一切守护努巴尼。
+                <p>OR15学习许多关于这个世界,在积极乐观的影响以及越来越强的荣誉和职责感的引导下，将不惜一切守护努巴尼。
                   <Link to='/contact'>了解更多</Link>
                   </p>
               </div>
