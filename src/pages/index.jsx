@@ -10,6 +10,7 @@ export default function() {
           <Mg1000 className={`${animate.animated} ${animate.fadeInRight}`}> 
                 <h1>布里特安防公司</h1>
                 <h3>您的安全 就是我们的未来</h3>
+                <h3>他的遗产他的智慧 他的 回声</h3>
           </Mg1000>
       </div>
       {/* 红色的介绍部分 */}
