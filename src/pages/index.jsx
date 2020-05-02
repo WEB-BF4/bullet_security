@@ -46,7 +46,7 @@ export default function() {
       <div className={styles.intro}>
           <Mg1000>
             <h1>就让我们来保护无辜的人民</h1>
-            <p>保护你们的安全是我的首要职责</p>
+            <h2>保护你们的安全是我的首要职责</h2>
             <div className={styles.introbox}>
               <i className='iconfont'>&#xe614;</i>
               <h3>屏障立场</h3>
