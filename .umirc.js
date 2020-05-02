@@ -11,6 +11,9 @@ export default {
   //     ]
   //   }
   // ],
+  publicPath: './',
+  history:'hash',
+
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {

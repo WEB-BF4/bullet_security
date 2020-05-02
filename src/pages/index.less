@@ -24,6 +24,38 @@
     font-family: @font_bth;
   }
 }
+.redintro{
+  @pbt:20px;
+  box-sizing:border-box;
+  padding: @pbt 0px;
+  background-color: #CE2026;
+  .infobox{
+    float: left;
+    color:#fff;
+    text-align: left;
+    width: 1000px/3;
+    &:nth-child(2),&:nth-child(3){
+      border-left: 1px solid #fff;
+      padding-left: 20px;
+    }
+    strong{
+      display: inline-block;
+      font-size: 18px;
+    }
+    p{
+      width: 80%;
+      margin-top: 1em;
+      text-indent: 2em;
+      a{
+        color:#fff;
+        font-weight: bold;
+        margin-left: 1em;
+      }
+    }
+  }
+  
+}
+// 介绍框
 .intro{
   @mg1000:1000px;
   box-sizing: border-box;
@@ -40,6 +72,7 @@
     text-shadow: 2px 2px 5px #000;
   }
   p{
+    min-height: 100px;
     margin: 20px 0px 40px 0px ;
   }
   .introbox{

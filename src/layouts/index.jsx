@@ -1,4 +1,5 @@
 import styles from './index.less';
+
 import './reset.css';
 import {NavLink} from 'umi';
 import { Mg1000 } from '../globalstyle';
@@ -7,6 +8,7 @@ import logo from '../assets/img/logo.webp';
 import { GlobalFontStyle } from '../assets/font/font';
 //引入字体图标
 import { GlobalIconStyle } from '../assets/fonticon/iconfont'
+
 function BasicLayout(props) {
   return (
     <div className={styles.normal}>
@@ -15,6 +17,7 @@ function BasicLayout(props) {
       <nav>
           <Mg1000>
               <img src={logo} alt="图片"/>
+              {/* <h3 className={`${styles.logo_text} ${animate.animated} ${animate.rubberBand} `}> */}
               <h3 className={styles.logo_text}>
                 Bullet <span>Security</span>
                 <p>布里特安防公司</p>
