@@ -4,12 +4,18 @@
   align-items: center;
   justify-content: center;
 }
+
+
+
 // 头部导航条
 nav{
-  position: relative;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
   @navhight:80px;
   height: @navhight;
-  background-color: #F2F1ED;
+  background-color: transparent;
+  transition: 0.2s ease-in-out;
   img{
     position: absolute;
     top:50%;
@@ -18,11 +24,22 @@ nav{
     transform: translate(0,-50%);
   }
   a{
-    color: rgb(123,129,135);
+    color: #fff;
     &:hover{
-      color:rgb(123,129,135);
+      color:#fff;
     }
   }
+  &:hover,&.hover{
+      background-color: #F2F1ED;
+      a{
+        color: rgb(123,129,135);
+        &:hover{
+          color:rgb(123,129,135);
+        }
+      }
+  }
+
+
   .logo_text{
     position: relative;
     float: left;
@@ -56,7 +73,6 @@ nav{
       align-items: center;
       justify-content: center;
       font-family: 优设标题黑;
-
       &:hover{
         background-color: #353C42;
         a{
@@ -69,6 +85,9 @@ nav{
   }
   }
 }
+
+
+
 
 /* Footer 尾部关联信息 */
 @height:100px;
