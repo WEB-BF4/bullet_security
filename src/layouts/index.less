@@ -1,25 +1,38 @@
 @mg1000:1000px;
-
+.felxcenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 // 头部导航条
 nav{
-
-  @navhight:110px;
+  position: relative;
+  @navhight:80px;
   height: @navhight;
-  background-color: #ececec;
+  background-color: #F2F1ED;
   img{
     position: absolute;
     top:50%;
+    left: 0;
+    height: 70px;
     transform: translate(0,-50%);
-    width: 180px;
   }
-
+  a{
+    color: rgb(123,129,135);
+    &:hover{
+      color:rgb(123,129,135);
+    }
+  }
   .logo_text{
     position: relative;
     float: left;
-    margin: 40px 0px 0px 170px;
+    width: 300px;
+    height: @navhight;
     font-size: 24px;
     color:#891519;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    flex-direction: column;
+    .felxcenter();
     p{
       margin: -10px 0px 0px 0px ;
       font-size: 14px;
@@ -28,6 +41,7 @@ nav{
       font-family: 优设标题黑;
     }
   }
+
   ul {
     float: right;
     width: 300px;
@@ -42,6 +56,16 @@ nav{
       align-items: center;
       justify-content: center;
       font-family: 优设标题黑;
+
+      &:hover{
+        background-color: #353C42;
+        a{
+          color: #FF9C00;
+          &:hover{
+            color:#FF9C00;
+          }
+        }
+      }
   }
   }
 }

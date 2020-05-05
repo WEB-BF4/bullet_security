@@ -3,7 +3,7 @@ import styles from './index.less';
 import './reset.css';
 import {NavLink} from 'umi';
 import { Mg1000 } from '../globalstyle';
-import logo from '../assets/img/logo.webp';
+import logo from '../assets/img/logo.png';
 // 引入字体
 import { GlobalFontStyle } from '../assets/font/font';
 //引入字体图标
@@ -19,7 +19,7 @@ function BasicLayout(props) {
               <img src={logo} alt="图片"/>
               {/* <h3 className={`${styles.logo_text} ${animate.animated} ${animate.rubberBand} `}> */}
               <h3 className={styles.logo_text}>
-                Bullet <span>Security</span>
+                 <span>Bullet&nbsp;Security</span>
                 <p>布里特安防公司</p>
               </h3>
               <ul>
