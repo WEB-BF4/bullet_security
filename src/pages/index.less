@@ -1,31 +1,34 @@
 body{
   background-color:rgba(0,0,0,.7);
 }
-// 导航条banner
+.hide{
+ visibility: hidden;
+}
 .mgcenter(){
   margin: 0 auto;
 }
-@font_bth:"优设标题黑";
+@font_bth:"bth";
 .banner{
   overflow: hidden;
-  @banheight:600px;
+  @banheight:680px;
   height: @banheight;
   background:#20232A;
-  background: center/cover url(../assets/img/banner3.png);
+  background: center/cover url(../assets/img/banner3.jpg);
   background-attachment: fixed;
   color: #fff;  
-  h1{
-    margin-top: 220px;
+  .banner_h1{
+    margin-top: 200px;
     color: #fff;
-    font-size: 60px;
+    font-size: 72px;
     font-family: @font_bth;
     text-shadow: 5px 5px 10px #000;
   }
-  h3{
+  .banner_h3{
     width: 700px;
     color: #fff;
-    font-size: 30px;
+    font-size: 36px;
     font-family: @font_bth;
+    margin-left: 150px;
   }
 }
 // 红色介绍框
@@ -59,7 +62,6 @@ body{
       }
     }
   }
-  
 }
 //白色介绍框
 .whiteintro{

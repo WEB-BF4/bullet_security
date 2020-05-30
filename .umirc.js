@@ -2,18 +2,8 @@
 // ref: https://umijs.org/config/
 export default {
   treeShaking: true,
-  // routes: [
-  //   {
-  //     path: '/',
-  //     component: '../layouts/index',
-  //     routes: [
-  //       { path: '/', component: '../pages/index' }
-  //     ]
-  //   }
-  // ],
   publicPath: './',
   history:'hash',
-
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
@@ -37,4 +27,11 @@ export default {
       },
     }],
   ],
+  proxy: {
+    '/xjbx': {
+      'target':'http://api.map.baidu.com/weather/v1/?district_id=110100&data_type=all&ak=AjgOd5cXAYtLNL2omrQq3OXXxC6IbYw5&qq-pf-to=pcqq.c2c',
+      'changeOrigin': true,
+      'pathRewrite': { '^/xjbx' : '' },
+    },
+  }
 }

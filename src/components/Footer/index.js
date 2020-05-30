@@ -1,39 +1,10 @@
+import React from 'react';
+import { Mg1000 } from '../../globalstyle';
 import styles from './index.less';
-
-import './reset.css';
-import {NavLink} from 'umi';
-import { Mg1000 } from '../globalstyle';
-import logo from '../assets/img/logo.png';
-// 引入字体
-import { GlobalFontStyle } from '../assets/font/font';
-//引入字体图标
-import { GlobalIconStyle } from '../assets/fonticon/iconfont'
-
-function BasicLayout(props) {
-  return (
-    <div className={styles.normal}>
-      <GlobalFontStyle/>
-      <GlobalIconStyle/>
-      <nav>
-          <Mg1000>
-              <img src={logo} alt="图片"/>
-              {/* <h3 className={`${styles.logo_text} ${animate.animated} ${animate.rubberBand} `}> */}
-              <h3 className={styles.logo_text}>
-                 <span>Bullet&nbsp;Security</span>
-                <p>布里特安防公司</p>
-              </h3>
-              <ul>
-                <li><NavLink exact to='/'>首页</NavLink></li>
-                <li><NavLink to='/contact'>联系我们</NavLink></li>
-                <li><NavLink to='/shopping'>订购商品</NavLink></li>
-              </ul>
-          </Mg1000>
-      </nav>
-      <div style={{minHeight:"700px"}}>
-        {props.children}
-      </div>
-      <footer>
-        <div className={styles._contact}>
+const Footer = () => {
+    return (
+        <footer>
+            <div className={styles._contact}>
           <Mg1000 className={styles.flex}>
               <div className={styles.infobox}>
                 <strong>联系电话</strong>
@@ -49,7 +20,7 @@ function BasicLayout(props) {
               </div>
           </Mg1000>
         </div>
-        <div className={styles._info}>
+            <div className={styles._info}>
           <Mg1000>
             <div className={styles.infobox}>
                 <strong>全国安保企业前三十强</strong>
@@ -73,12 +44,11 @@ function BasicLayout(props) {
 
           </Mg1000>
         </div>
-        <div className={styles._copyright}>
+            <div className={styles._copyright}>
           &copy; by BF4 Proudly created with everyFriends
         </div>
-      </footer>
-    </div>
-  );
-}
+        </footer>
+    );
+};
 
-export default BasicLayout;
+export default Footer;

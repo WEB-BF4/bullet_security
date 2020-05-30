@@ -1,3 +1,9 @@
+@font-face{ 
+/* 引入优设标题黑 */
+font-family: bth;
+src: url(./assets/font/bth.ttf);
+}
+
 html, body, #root {
   height: 100%;
 }
