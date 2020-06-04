@@ -3,7 +3,6 @@ import './reset.css';
 // 引入字体
 //引入字体图标
 import { GlobalIconStyle } from '../assets/fonticon/iconfont'
-import Footer from '@/components/Footer';
 // import NavBar from '@/components/NavBar'
 function BasicLayout(props) {
   return (
@@ -13,7 +12,6 @@ function BasicLayout(props) {
       <div style={{minHeight:"700px"}}>
         {props.children}
       </div>
-      <Footer/>
     </div>
   );
 }

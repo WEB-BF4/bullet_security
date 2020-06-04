@@ -63,14 +63,15 @@ nav{
   }
 
   ul {
+    @liWidth:100px;
     float: right;
-    width: 300px;
+    width: @liWidth*4;
     height: @navhight;
     li{
       float: left;
       list-style-type: none;
       height: 100%;
-      width: 100px;
+      width:@liWidth;
       font-size: 18px;
       display: flex;
       align-items: center;

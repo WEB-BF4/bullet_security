@@ -1,11 +1,14 @@
 import { Mg1000 } from '../globalstyle';
 import NavBar from '../components/NavBar';
+import Footer from '@/components/Footer';
 
 import styles from './index.less';
 import animate from '../assets/animate.min.css';
+
 import axios from 'axios';
 import { Link } from 'dva/router';
 import { useEffect } from 'react';
+
 // import axios from 'axios';
 let nitai = ()=>{
   if(document.documentElement.scrollTop>500){
@@ -29,7 +32,7 @@ export default function() {
       window.removeEventListener('scroll',nitai)
   }})
   return (
-    <div >
+    <div className={styles.shouye}>
       {/* banner 界面 轮播图 */}
       <div className={`${styles.banner} ${styles.banner}`}>
           <NavBar/>
@@ -63,7 +66,7 @@ export default function() {
           </Mg1000>
         </div>
       {/* 拟态框框介绍部分*/}
-      <div className={styles.intro} >
+      <div className={styles.whiteintro} >
           <Mg1000 >
             <h1>就让我们来保护无辜的人民</h1>
             <h2>保护你们的安全 是我的首要职责</h2>
@@ -94,9 +97,18 @@ export default function() {
       </div>
 
       <div className={styles.twoside}>
-          <div className={styles.left}></div>
-          <div className={styles.right}></div>
+          <div className={styles.white}></div>
+          <div className={styles.green}></div>
       </div>
+      <div className={styles.twoside}>
+          <div className={styles.green}></div>
+          <div className={styles.white}></div>
+      </div>
+      <div className={styles.twoside}>
+          <div className={styles.white}></div>
+          <div className={styles.green}></div>
+      </div>
+      <Footer/>
     </div>
   );
 }

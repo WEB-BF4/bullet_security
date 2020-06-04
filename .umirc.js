@@ -28,10 +28,15 @@ export default {
     }],
   ],
   proxy: {
-    '/xjbx': {
-      'target':'http://api.map.baidu.com/weather/v1/?district_id=110100&data_type=all&ak=AjgOd5cXAYtLNL2omrQq3OXXxC6IbYw5&qq-pf-to=pcqq.c2c',
+    '/cargoAdd': {
+      'target':'http://192.168.0.102:8080/bullet/Cargo_addItem',
       'changeOrigin': true,
-      'pathRewrite': { '^/xjbx' : '' },
+      'pathRewrite': { '^/cargoAdd' : '' },
     },
+    '/cargoView': {
+      'target':'http://192.168.0.102:8080/bullet/Cargo_viewCargo',
+      'changeOrigin': true,
+      'pathRewrite': { '^/cargoView' : '' },
+    }
   }
 }
