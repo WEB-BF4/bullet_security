@@ -29,7 +29,7 @@ class AddCargo extends Component {
         console.log(useInfo)
         this.props.form.validateFields((err,values)=>{
             if(!err){
-                message.success(`没问题哦`);
+                message.info(`添加中，请稍等`);
                 // axios.get("/cargoView").then(res=>{
                 //     let sjson=res.data;
                 //     console.log(sjson)
@@ -46,8 +46,9 @@ class AddCargo extends Component {
                 }}).then(res=>{
                     let sjson=res.data;
                     console.log(sjson)
+                    message.success(`商品成功添加`);
                 }).catch(err=>{
-                    console.log(err.message)
+                    message.warning('请求没出来，是不是数据库有问题');
                 })
                 
             }
@@ -56,7 +57,7 @@ class AddCargo extends Component {
     render() {
         const { getFieldDecorator } =  this.props.form;
         // let useInfo = this.props.form.getFieldsValue(); 
-        let code = new String(Date.parse(new Date())/1000);
+        let code =""+(Date.parse(new Date())/1000);
         return (
             <div>
                <Card title="商品添加模块">
@@ -64,7 +65,7 @@ class AddCargo extends Component {
                         <FormItem label="商品Id" {...formItemLatout }>
                            {
                                 getFieldDecorator('Cargo_ID',{
-                                    initialValue:"C"+code,
+                                    initialValue:"C"+code.substr(code.length-9),
                                     rules:[
                                         {
                                             required:true,
@@ -78,7 +79,6 @@ class AddCargo extends Component {
                         </FormItem>
                         <FormItem label="商品名称" {...formItemLatout }>
                            {getFieldDecorator('Cargo_name',{
-                               initialValue:"苦瓜",
                                 rules:[
                                     {
                                         required:true,
@@ -86,7 +86,7 @@ class AddCargo extends Component {
                                     }
                                 ]
                            })(
-                                <Input prefix={<Icon type="user"/>} type="text"/>
+                                <Input prefix={<Icon type="user"/>} type="text" placeholder="商品名称"/>
                            )}
                         </FormItem>
                         <FormItem label="商品图标" {...formItemLatout }>
@@ -109,6 +109,10 @@ class AddCargo extends Component {
                                     {
                                         required:true,
                                         message:'商品名不能为空'
+                                    },
+                                    {
+                                        pattern:/[^\u4E00-\u9FA5]/i,
+                                        message:"不能出现中文字符"
                                     }
                                 ]
                            })(
@@ -129,16 +133,20 @@ class AddCargo extends Component {
                                     }
                                 ]
                            })(
-                                <Input prefix={<Icon type="user"/>} type="number"/>
+                                <Input prefix={<Icon type="pay-circle" />} type="number"/>
                            )}
                         </FormItem>
                         <FormItem label="商品简介" {...formItemLatout }>
                            {getFieldDecorator('Cargo_info',{
-                               initialValue:"八零八零",
+                               initialValue:"",
                                 rules:[
                                     {
                                         required:true,
-                                        message:'必须得有商品间接'
+                                        message:'必须得有商品简介'
+                                    },
+                                    {
+                                        pattern:/[^\u4E00-\u9FA5]/i,
+                                        message:"不能出现中文字符"
                                     }
                                 ]
                            })(

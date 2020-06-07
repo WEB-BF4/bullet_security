@@ -37,6 +37,16 @@ export default {
       'target':'http://192.168.0.102:8080/bullet/Cargo_viewCargo',
       'changeOrigin': true,
       'pathRewrite': { '^/cargoView' : '' },
+    },
+    '/userView': {
+      'target':'http://192.168.0.102:8080/bullet/User_viewUser',
+      'changeOrigin': true,
+      'pathRewrite': { '^/userView' : '' },
+    },
+    '/powerView': {
+      'target':'http://192.168.0.102:8080/bullet/Power_viewPower',
+      'changeOrigin': true,
+      'pathRewrite': { '^/powerView' : '' },
     }
   }
 }

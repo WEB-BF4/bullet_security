@@ -1,5 +1,10 @@
 
 // 主页的样式
+.twocenter(){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 body{
   background-color:rgba(0,0,0,.7);
 }
@@ -33,6 +38,7 @@ body{
     margin-left: 150px;
   }
 }
+
 // 红色介绍框
 .redintro{
   overflow: hidden;
@@ -128,17 +134,49 @@ body{
 }
 
 .twoside{
-  height:500px;
+  @left:55%;
+  @right:calc(100% - @left);
+  background-color: #fff;
+  height:650px;
   .white,.green{
     float: left;
     height: 100%;
-    width: calc(50%);
+    .twocenter();
+  }
+  .f_white{
+    color: #EEF0E4;
+  }
+  &.blue{
+    background: #20232A;
   }
   .white{
-    background-color: #fff;
+
+    width:@left;
+   
+    .leftimg{
+      width:420px;
+      transition: 0.4s ease-in-out;
+      &:hover{
+        transform: scale(1.2);
+      }
+    }
   }
   .green{
-    background-color: #41B883;
+    width:@right;
+    .title{
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .subtitle{
+        font-size:18px;
+    }
+    p{
+      width: 500px;
+      font-size: 14px;
+      text-indent: 1.6em;
+      margin-bottom: 16px;  
+    }
+    
   }
 }
 // contact页的部分

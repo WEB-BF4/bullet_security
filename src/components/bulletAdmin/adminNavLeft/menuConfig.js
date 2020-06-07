@@ -38,11 +38,11 @@ const menuList = [
         ]
     },{
         title: <span><Icon type="idcard"/>用户信息查看</span>,
-        key: '/bulletAdmin/user',
+        key: '/bulletAdmin/userView',
     },
     {
         title: <span><Icon type="monitor" />后台管理员</span>,
-        key: '/bulletAdmin/admin'
+        key: '/bulletAdmin/adminView'
     }
 ];
 export default menuList;

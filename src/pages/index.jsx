@@ -9,6 +9,9 @@ import axios from 'axios';
 import { Link } from 'dva/router';
 import { useEffect } from 'react';
 
+
+import ser1 from '@/assets/img/ser1.png';
+import ser2 from '@/assets/img/ser2.png';
 // import axios from 'axios';
 let nitai = ()=>{
   if(document.documentElement.scrollTop>500){
@@ -97,16 +100,38 @@ export default function() {
       </div>
 
       <div className={styles.twoside}>
-          <div className={styles.white}></div>
-          <div className={styles.green}></div>
+          <div className={styles.white}>
+              <img className={styles.leftimg} src={ser1} alt=""></img>
+          </div>
+          <div className={styles.green}>
+              <div>
+              <h3 className={styles.title}>北京维思来科技有限公司</h3>
+              <h4 className={styles.subtitle}>概念/Bullet Security/</h4>
+                <p>wiselife 智慧生活的美好在于它是你最放松、最私密的空间。每一个家都有它的光线、
+                  气味、形状、温度，每一个家都是独一无二的。家之美，或热情活力，或恬静沉稳，找到最舒适的家具生活状态，
+                  便是我们希望为你实现的小确幸。</p>
+                <p>北京维思来科技有限公司，成立于2016年，致力于为客户提供兼具美学与科技的智能家具，立志成为智能家具行业的开拓者。
+                  公司旗下营销品牌：37度智能家具，目前主要有智慧家庭、智慧酒店、智慧办公、智慧亲子等产品系列</p>
+              </div>
+          </div>
       </div>
-      <div className={styles.twoside}>
-          <div className={styles.green}></div>
-          <div className={styles.white}></div>
-      </div>
-      <div className={styles.twoside}>
-          <div className={styles.white}></div>
-          <div className={styles.green}></div>
+      <div className={`${styles.twoside} ${styles.blue}`}>
+          <div className={styles.green}>
+            <div className={styles.f_white}>
+                <h3 className={styles.title}>北京维思来科技有限公司</h3>
+                <h4 className={styles.subtitle}>理念/ Concept /</h4>
+                  <p >我们相信优质的家居产品，首要的是拥有美观的外表。在产品的造型设计、
+                    色彩搭配、材质选择上，我们都进行了精心的考量，最终呈现出简洁优雅的
+                    科技家具智能产品，为你的家增添格调</p>
+                  <p >在美观的基础上，智能家具更致力于为你的家居注入智能的灵魂
+                    ——我们希望它在具备先进智能技术的同时，能不着痕迹地与整个家居环境融为一体</p>
+                  <p>所有的智能元素都巧妙地隐藏于设计中，创造更方便的使用体验。我们觉得，智能技术在
+                    现代家居生活中扮演的是一个低调可靠的辅助角色，而作为使用者的你，才是家的主人。</p>
+                </div>
+            </div>
+          <div className={styles.white}>
+              <img className={styles.leftimg} src={ser2} alt=""></img>
+          </div>   
       </div>
       <Footer/>
     </div>
