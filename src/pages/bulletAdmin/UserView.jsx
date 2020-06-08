@@ -9,6 +9,10 @@ class UserView extends Component {
         axios.get('/userView').then(res=>{
             console.log(res.data.data)
             let dataSource = res.data.data;
+            dataSource.map((item)=>{
+                item.key = item.User_id;
+                return item;
+            })
             dataSource.pop();
             this.setState({
                 dataSource

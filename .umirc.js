@@ -47,6 +47,16 @@ export default {
       'target':'http://192.168.0.102:8080/bullet/Power_viewPower',
       'changeOrigin': true,
       'pathRewrite': { '^/powerView' : '' },
+    },
+    '/orderView': {
+      'target':'http://192.168.0.102:8080/bullet/Orders_viewOrder',
+      'changeOrigin': true,
+      'pathRewrite': { '^/orderView' : '' },
+    },
+    '/orderCheck': {
+      'target':'http://192.168.0.102:8080/bullet/Orders_orderCheck',
+      'changeOrigin': true,
+      'pathRewrite': { '^/orderCheck' : '' },
     }
   }
 }

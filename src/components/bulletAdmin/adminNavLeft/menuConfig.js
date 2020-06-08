@@ -15,7 +15,7 @@ const menuList = [
             },
             {
                 title: '订单发货',
-                key: '/bulletAdmin/order/check',
+                key: '/bulletAdmin/order/checkOrder',
             }
         ]
     },
