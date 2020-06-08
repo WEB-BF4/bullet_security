@@ -56,7 +56,7 @@ export default function() {
       anifun(an_Part2_img.current,animate.zoomIn,styles.hide);
       anifun(an_Part2_word.current,animate.slideInLeft,styles.hide);
     }
-  }))
+  },[]))
 
 
   useEffect(()=>{
