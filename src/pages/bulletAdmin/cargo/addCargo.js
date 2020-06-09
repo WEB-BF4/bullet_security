@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Card,Form,Icon,Input,Button,message,Select} from 'antd';
+import {Card,Form,Icon,Input,Button,message,Select,Upload} from 'antd';
+import { withRouter } from 'umi';
 import axios from 'axios';
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -24,35 +25,56 @@ const offsetLayout = {
     }
 }
 class AddCargo extends Component {
+    state={
+        imageUrl:null,
+        loading:false
+    }
+    getBase64 = (img, callback) =>{
+        const reader = new FileReader();
+        reader.addEventListener('load', () => callback(reader.result));
+        reader.readAsDataURL(img);
+    }
+    handleChange = info => {
+        this.getBase64(info.file.originFileObj, imageUrl =>
+            this.setState({
+                imageUrl
+            }),
+        );
+    }
     handleSubmit = ()=>{
         let useInfo = this.props.form.getFieldsValue();
-        console.log(useInfo)
+
         this.props.form.validateFields((err,values)=>{
             if(!err){
+                this.setState({
+                    loading:true
+                })
                 message.info(`添加中，请稍等`);
-                // axios.get("/cargoView").then(res=>{
-                //     let sjson=res.data;
-                //     console.log(sjson)
-                // }).catch(err=>{
-                //     console.log(err.message)
-                // })
                 axios.get("/cargoAdd",{params:{
                     "cargo.Cargo_id":useInfo.Cargo_ID,
                     "cargo.Cargo_name":useInfo.Cargo_name,
-                    "cargo.Cargo_img":useInfo.Cargo_img,
+                    "cargo.Cargo_img":"img/"+useInfo.Cargo_ID+"/.jpg",
                     "cargo.Cargo_type":useInfo.Cargo_type,
                     "cargo.Cargo_price":useInfo.Cargo_price,
                     "cargo.Cargo_info":useInfo.Cargo_info
                 }}).then(res=>{
-                    let sjson=res.data;
-                    console.log(sjson)
                     message.success(`商品成功添加`);
+                    this.props.history.push('/bulletAdmin/cargo/addCargo');
+                    this.setState({
+                        loading:false
+                    })
+                    
                 }).catch(err=>{
                     message.warning('请求没出来，是不是数据库有问题');
+                    this.setState({
+                        loading:false
+                    })
                 })
-                
             }
         })
+    }
+    componentDidMount(){
+        console.log(this.props);
     }
     render() {
         const { getFieldDecorator } =  this.props.form;
@@ -99,7 +121,14 @@ class AddCargo extends Component {
                                     }
                                 ]
                            })(
-                                <Input prefix={<Icon type="user"/>} type="text"/>
+                                <Upload
+                                            listType="picture-card"
+                                            showUploadList={false}
+                                            onChange={this.handleChange}
+
+                                >
+                                    {this.state.imageUrl?<img style={{width:"100%"}} src={this.state.imageUrl} alt=""/>:<Icon type="plus"/>}
+                                </Upload>
                            )}
                         </FormItem>
                         <FormItem label="商品类别" {...formItemLatout }>
@@ -125,7 +154,7 @@ class AddCargo extends Component {
                         </FormItem>
                         <FormItem label="商品价格" {...formItemLatout }>
                            {getFieldDecorator('Cargo_price',{
-                               initialValue:12.4,
+                               initialValue:0.0,
                                 rules:[
                                     {
                                         required:true,
@@ -147,6 +176,10 @@ class AddCargo extends Component {
                                     {
                                         pattern:/[^\u4E00-\u9FA5]/i,
                                         message:"不能出现中文字符"
+                                    },,
+                                    {
+                                        pattern:/[^\r|\n|\s]/i,
+                                        message:"空格回车"
                                     }
                                 ]
                            })(
@@ -154,7 +187,7 @@ class AddCargo extends Component {
                            )}
                         </FormItem>
                         <FormItem {...offsetLayout}>
-                           <Button type="primary" onClick={this.handleSubmit}>添加商品</Button>
+                           <Button type="primary" onClick={this.handleSubmit} loading={this.state.loading}>添加商品</Button>
                         </FormItem>
                     </Form>
                </Card>
@@ -163,4 +196,4 @@ class AddCargo extends Component {
     }
 }
 
-export default Form.create()(AddCargo);
+export default Form.create()(withRouter(AddCargo));

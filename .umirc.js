@@ -10,7 +10,7 @@ export default {
       antd: true,
       dva: true,
       dynamicImport: { webpackChunkName: true },
-      title: 'myumiapp2',
+      title: '布里特安防公司',
       dll: true,
       locale: {
         enable: true,
@@ -38,16 +38,24 @@ export default {
       'changeOrigin': true,
       'pathRewrite': { '^/cargoView' : '' },
     },
+    '/cargoDelete': {
+      'target':'http://192.168.0.102:8080/bullet/Cargo_deleteItem',
+      'changeOrigin': true,
+      'pathRewrite': { '^/cargoDelete' : '' },
+    },
+    // 商品系列
     '/userView': {
       'target':'http://192.168.0.102:8080/bullet/User_viewUser',
       'changeOrigin': true,
       'pathRewrite': { '^/userView' : '' },
     },
+    //用户系列
     '/powerView': {
       'target':'http://192.168.0.102:8080/bullet/Power_viewPower',
       'changeOrigin': true,
       'pathRewrite': { '^/powerView' : '' },
     },
+    //管理员系列
     '/orderView': {
       'target':'http://192.168.0.102:8080/bullet/Orders_viewOrder',
       'changeOrigin': true,
@@ -58,5 +66,6 @@ export default {
       'changeOrigin': true,
       'pathRewrite': { '^/orderCheck' : '' },
     }
+    //订单系列
   }
 }

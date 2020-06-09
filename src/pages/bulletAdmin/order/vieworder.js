@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import { Card,Table}from 'antd';
+import { Card,Table,Icon}from 'antd';
 import axios from 'axios';
 const Vieworder = () => {
     const columns = [
@@ -58,7 +58,7 @@ const Vieworder = () => {
     },[])
     return (
         <div>
-            <Card title="用户订单">
+            <Card title={<span>订单查看 <Icon type="account-book"/></span>}>
                 <Table
                     columns={columns}
                     dataSource={orderData}

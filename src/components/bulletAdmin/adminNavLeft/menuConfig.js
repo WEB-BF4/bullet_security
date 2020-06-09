@@ -25,7 +25,7 @@ const menuList = [
         children: [
             {
                 title: '商品查看',
-                key: '/bulletAdmin/cargo/view',
+                key: '/bulletAdmin/cargo/cargoView',
             },
             {
                 title: '商品增加',

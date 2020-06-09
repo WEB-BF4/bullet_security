@@ -8,7 +8,7 @@ import style from './style.less';
 function BasicLayout(props) {
   return (
     <div>
-        <Redirect to='/bulletAdmin/order/checkOrder'/>
+        <Redirect to='/bulletAdmin/home'/>
         <Row className={style.container}>
           <Col span={3}  className={style.nav_left}>
             <AdminNavLeft/>
