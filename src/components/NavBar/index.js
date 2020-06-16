@@ -16,7 +16,7 @@ const NavBar = (props) => {
                     <li><NavLink exact to='/'>首页</NavLink></li>
                     <li><NavLink to='/contact'>联系我们</NavLink></li>
                     <li><NavLink to='/shopping'>订购商品</NavLink></li>
-                    <li><NavLink to="/bulletAdmin">后台</NavLink></li>
+                    <li><NavLink to="/bulletAdmin/home">后台</NavLink></li>
                 </ul>
             </Mg1000>
         </nav>

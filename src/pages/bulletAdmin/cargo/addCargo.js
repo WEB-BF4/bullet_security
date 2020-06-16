@@ -59,7 +59,7 @@ class AddCargo extends Component {
                     "cargo.Cargo_info":useInfo.Cargo_info
                 }}).then(res=>{
                     message.success(`商品成功添加`);
-                    this.props.history.push('/bulletAdmin/cargo/addCargo');
+                    this.props.history.push('/bulletAdmin/cargo/cargoView');
                     this.setState({
                         loading:false
                     })

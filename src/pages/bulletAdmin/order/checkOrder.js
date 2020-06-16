@@ -11,7 +11,6 @@ class CheckOrder extends Component {
     }
     request(){
         axios.get('/orderView').then(res=>{
-            console.log(res)
             let data= res.data.data;
             let notEndNun = 0;
             data.map((item)=>{
@@ -19,7 +18,7 @@ class CheckOrder extends Component {
                 if(item.isFinished == 0){
                     notEndNun+=1;
                 }
-                item.isFinished = item.isFinished == 1?<span><Icon  type="check-circle" theme="twoTone" twoToneColor="#52c41a" />&nbsp;已完成</span>:<span>"未完成"</span>;
+                item.isFinished = item.isFinished == 1?<span><Icon  type="check-circle" theme="twoTone" twoToneColor="#52c41a" />&nbsp;已完成</span>:<span>未完成</span>;
                 return item;
             })
             data.pop();
