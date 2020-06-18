@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'umi';
-import { Row,Col } from 'antd';
+import { Row,Col} from 'antd';
 import AdminNavLeft from '../../components/bulletAdmin/adminNavLeft';
 import AdminFooter from '../../components/bulletAdmin/adminFooter';
 import AdminHeader from '../../components/bulletAdmin/adminHeader';
@@ -8,7 +8,7 @@ import style from './style.less';
 function BasicLayout(props) {
   return (
     <div>
-        <Redirect to='/bulletAdmin/home'/>
+        <Redirect to='/bulletAdmin/earthView'/>
         <Row className={style.container}>
           <Col span={3}  className={style.nav_left}>
             <AdminNavLeft/>

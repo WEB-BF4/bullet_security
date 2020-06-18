@@ -3,6 +3,9 @@ const menuList = [
     {
         title: <span><Icon type="bank"/>首页</span>,
         key: '/bulletAdmin/home'
+    },{
+        title: <span><Icon type="idcard"/>全球订单查看</span>,
+        key: '/bulletAdmin/earthView',
     },
     {
         title: <span><Icon type="book"/>订单管理</span>,

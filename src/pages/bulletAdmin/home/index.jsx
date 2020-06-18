@@ -1,5 +1,5 @@
 import React,{useEffect,useRef}from 'react';
-import styles from './style.less';
+import styles from '../style.less';
 import { Link } from 'umi';
 import {Row,Col,Card} from 'antd';
 import echarts from 'echarts';
