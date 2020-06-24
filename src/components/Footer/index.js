@@ -1,28 +1,10 @@
+import React from 'react';
+import { Mg1000 } from '../../globalstyle';
 import styles from './index.less';
-import './reset.css';
-import {NavLink} from 'umi';
-import { Mg1000 } from './style';
-import logo from '../assets/logo.webp';
-function BasicLayout(props) {
-  return (
-    <div className={styles.normal}>
-      <nav>
-          <Mg1000>
-              <img src={logo} alt="图片"/>
-              <h3 className={styles.logo_text}>
-                Bullet <span>Security</span>
-                <p>布里特安防公司</p>
-              </h3>
-              <ul>
-                <li><NavLink exact to='/'>首页</NavLink></li>
-                <li><NavLink to='/contact'>联系我们</NavLink></li>
-                <li><NavLink to='/shopping'>订购商品</NavLink></li>
-              </ul>
-          </Mg1000>
-      </nav>
-      {props.children}
-      <footer>
-        <div className={styles._contact}>
+const Footer = () => {
+    return (
+        <footer>
+            <div className={styles._contact}>
           <Mg1000 className={styles.flex}>
               <div className={styles.infobox}>
                 <strong>联系电话</strong>
@@ -38,7 +20,7 @@ function BasicLayout(props) {
               </div>
           </Mg1000>
         </div>
-        <div className={styles._info}>
+            <div className={styles._info}>
           <Mg1000>
             <div className={styles.infobox}>
                 <strong>全国安保企业前三十强</strong>
@@ -57,18 +39,16 @@ function BasicLayout(props) {
             <div className={styles.infobox}>
                 <strong>优秀的售后</strong>
                 <p>国际模拟入侵比赛规划者</p>
-                <p>国际模拟入侵比赛规划者</p>
-                asdfasdasdfasd
+                <p>战术防御比赛规划者</p>
             </div>
 
           </Mg1000>
         </div>
-        <div className={styles._copyright}>
+            <div className={styles._copyright}>
           &copy; by BF4 Proudly created with everyFriends
         </div>
-      </footer>
-    </div>
-  );
-}
+        </footer>
+    );
+};
 
-export default BasicLayout;
+export default Footer;
