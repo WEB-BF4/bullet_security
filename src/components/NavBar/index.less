@@ -1,0 +1,92 @@
+@mg1000:1000px;
+.felxcenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@font_bth:"bth";
+// 头部导航条
+nav{
+//   position: absolute;
+//   z-index: 999;
+  width: 100%;
+  @navhight:80px;
+  height: @navhight;
+  background-color: transparent;
+  transition: 0.2s ease-in-out;
+  img{
+    position: absolute;
+    top:50%;
+    left: 0;
+    height: 70px;
+    transform: translate(0,-50%);
+  }
+  a{
+    color: #fff;
+    &:hover{
+      color:#fff;
+    }
+  }
+  &.solid{
+    background-color: #F2F1ED
+  }
+  &:hover,&.hover{
+      background-color: #F2F1ED;
+      a{
+        color: rgb(123,129,135);
+        &:hover{
+          color:rgb(123,129,135);
+        }
+      }
+  }
+
+
+  .logo_text{
+    position: relative;
+    float: left;
+    width: 300px;
+    height: @navhight;
+    font-size: 24px;
+    color:#891519;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    flex-direction: column;
+    .felxcenter();
+    p{
+      margin: -10px 0px 0px 0px ;
+      font-size: 14px;
+      color:#777;
+      letter-spacing: .52em;
+      font-family: @font_bth;
+    }
+  }
+
+  ul {
+    @liWidth:100px;
+    float: right;
+    width: @liWidth*4;
+    height: @navhight;
+    li{
+      float: left;
+      list-style-type: none;
+      height: 100%;
+      width:@liWidth;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: @font_bth;
+      &:hover{
+        background-color: #353C42;
+        a{
+          color: #FF9C00;
+          &:hover{
+            color:#FF9C00;
+          }
+        }
+      }
+  }
+  }
+}
+
