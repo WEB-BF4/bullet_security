@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import { Card,Table,Icon}from 'antd';
+import { Card,Table,Icon,Badge}from 'antd';
 import axios from 'axios';
 const Vieworder = () => {
     const columns = [
@@ -37,7 +37,14 @@ const Vieworder = () => {
         },
         {
             title:'订单是否完成',
-            dataIndex:'isFinished'
+            dataIndex:'isFinished',
+            render:(value)=>{
+                if(value === '1'){
+                    return   <Badge color="green" text="已完成" />
+                }else{
+                    return  <Badge color="red" text="未完成" />
+                }
+            }
         }
     ]
     let [orderData,setOrderData] = useState();

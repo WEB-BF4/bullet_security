@@ -1,30 +1,23 @@
 import React, { Component } from 'react';
-import {Card,Table, Button, Row, Modal, message,Icon} from 'antd';
+import {Card,Table, Button, Row, Modal, message,Badge} from 'antd';
 import axios from 'axios';
 
 class CheckOrder extends Component {
     state={
         orderData:null,
-        notEnd:0,
         selectedRowKeys:null,
         selectedRows:null
     }
     request(){
         axios.get('/orderView').then(res=>{
             let data= res.data.data;
-            let notEndNun = 0;
             data.map((item)=>{
                 item.key = item.Order_id;
-                if(item.isFinished == 0){
-                    notEndNun+=1;
-                }
-                item.isFinished = item.isFinished == 1?<span><Icon  type="check-circle" theme="twoTone" twoToneColor="#52c41a" />&nbsp;已完成</span>:<span>未完成</span>;
                 return item;
             })
             data.pop();
             this.setState({
                 orderData:data,
-                notEnd:notEndNun
             });
         })
     }
@@ -89,7 +82,14 @@ class CheckOrder extends Component {
             },
             {
                 title:'订单是否完成',
-                dataIndex:'isFinished'
+                dataIndex:'isFinished',
+                render:(value)=>{
+                    if(value === '1'){
+                        return   <Badge color="green" text="已完成" />
+                    }else{
+                        return  <Badge color="red" text="未完成" />
+                    }
+                }
             }
         ]
         const rowSelection = {
@@ -103,19 +103,24 @@ class CheckOrder extends Component {
             }
         }
         return (
-            <div>
-               
+            <div>             
                 <Row>
-                    <Card title={`用户订单发货  剩余${this.state.notEnd}订单未发货`} loading={!(this.state.orderData)}> 
-                        <Table 
-                        columns={columns}
-                        dataSource={this.state.orderData}
-                        rowSelection={rowSelection}
-                    >
-                        </Table>
+                    <Card title={`用户订单发货`} loading={!(this.state.orderData)}> 
+                        <Row>
+                            <Button styles={{marginBottom:"200px"}} onClick={()=>{this.check()}}>发货</Button>
+                        </Row>
+                        <Row>
+                            <Table
+                            columns={columns}
+                            dataSource={this.state.orderData}
+                            rowSelection={rowSelection}
+                        >
+                            </Table>
+                        </Row>
+                     
                     </Card>
                 </Row>
-                <Button onClick={()=>{this.check()}}>发货</Button>
+                
                 
             </div>
         );

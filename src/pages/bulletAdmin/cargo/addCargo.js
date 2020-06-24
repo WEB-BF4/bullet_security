@@ -176,7 +176,7 @@ class AddCargo extends Component {
                                     {
                                         pattern:/[^\u4E00-\u9FA5]/i,
                                         message:"不能出现中文字符"
-                                    },,
+                                    },
                                     {
                                         pattern:/[^\r|\n|\s]/i,
                                         message:"空格回车"
